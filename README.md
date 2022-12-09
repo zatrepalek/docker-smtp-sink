@@ -4,6 +4,15 @@ A minimalist fake SMTP server for development and debugging purposes.
 
 This is running in docker using docker-compose and is based on https://github.com/Tecnativa/docker-smtp-sink augmented with graceful stop for docker containers and rename email messages to .eml files.
 
+## Notes
+
+If this is used with PHP library PHPMailer use following settings:
+
+```
+$mailer->SMTPDebug = 0;
+$mailer->SMTPAuth = false;
+$mailer->SMTPSecure = '';
+```
 
 ## Example
 
