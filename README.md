@@ -4,6 +4,24 @@ A minimalist fake SMTP server for development and debugging purposes.
 
 This is running in docker using docker-compose and is based on https://github.com/Tecnativa/docker-smtp-sink augmented with graceful stop for docker containers and rename email messages to .eml files.
 
+## Usage
+
+Create ./tmp/mail directory and let smtp-sink container save .eml files there:
+
+```
+version: '3.2'
+
+services:
+  smtp-sink:
+    container_name: smtp-sink
+    image: zanne/smtp-sink
+    restart: unless-stopped
+    volumes:
+      - ./tmp/mail:/tmp/mail
+    ports:
+      - 8025:25
+```
+
 ## Notes
 
 If this is used with PHP library PHPMailer use following settings:
