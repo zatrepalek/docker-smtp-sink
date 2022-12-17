@@ -5,6 +5,7 @@ services:
     container_name: smtp-sink
     build:
       dockerfile: Dockerfile
+    image: zanne/smtp-sink
     restart: unless-stopped
     volumes:
       - ./tmp/mail:/tmp/mail

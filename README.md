@@ -52,3 +52,9 @@ Connection closed by foreign host.
 ```
 
 And caught email message will be saved in tmp/mail directory.
+
+# Docker Image
+
+Pull from [Docker Hub registry](https://cloud.docker.com/repository/registry-1.docker.io/zanne/smtp-sink):
+
+`docker pull zanne/smtp-sink:latest`
